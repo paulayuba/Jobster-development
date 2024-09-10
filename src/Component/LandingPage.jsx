@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -24,9 +25,9 @@ const LandingPage = () => {
             crucifix heirloom meggings bicycle rights.
           </p>
           <div className="mt-6">
-            <button className="bg-blue-500 text-white py-2 px-4 rounded-sm hover:bg-blue-600 transition duration-300">
+          <Link to="/login"><button className="bg-blue-500 text-white py-2 px-4 rounded-sm hover:bg-blue-600 transition duration-300">
               Login/Register
-            </button>
+            </button> </Link> 
           </div>
         </div>
 
