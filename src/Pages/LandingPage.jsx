@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.svg"
+import image from "../assets/image.svg"
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mb-10">
       {/* Header Section */}
       <div className="flex space-x-6 items-center px-6 py-4 mx-14">
-        <p className="bg-blue-400 font-bold w-10 h-10 text-3xl text-white flex items-center justify-center rounded-md">
-          J
-        </p>
-        <h2 className="text-blue-400 font-bold text-2xl">jobster</h2>
+        <img src={logo} alt="" />
       </div>
 
       {/* Main Section */}
@@ -34,7 +33,7 @@ const LandingPage = () => {
         {/* Right Side: Image */}
         <div className="flex justify-center h-96">
           <img
-            src="https://redux-toolkit-jobster.netlify.app/static/media/main.17b316de742b3a1202078c5ae18c8261.svg"alt=""
+            src={image}alt=""
           />
         </div>
       </div>
