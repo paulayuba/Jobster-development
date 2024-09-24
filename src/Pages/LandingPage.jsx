@@ -12,7 +12,7 @@ const LandingPage = () => {
       </div>
 
       {/* Main Section */}
-      <div className="grid grid-cols-2 gap-6 px-6 py-8 items-center">
+      <div className="grid grid-cols-2 gap-6 px-6 py-8 items-center overflow-hidden">
         {/* Left Side: Text Content */}
         <div className="text-left px-14">
           <h1 className="font-bold text-4xl">

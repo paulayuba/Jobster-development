@@ -85,7 +85,7 @@ const Login = () => {
 
           {/* Demo App Button */}
           <button className="bg-blue-200 hover:bg-blue-300 text-white font-semibold px-4 py-2 rounded-md mb-6 transition duration-300">
-            Demo App
+          <span className="text-blue-400">Demo App</span>
           </button>
 
           {/* Register Link */}
