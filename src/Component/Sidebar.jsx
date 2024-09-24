@@ -5,10 +5,11 @@ import { ImProfile } from "react-icons/im";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import logo from '../assets/logo.svg';
 import { IoBarChart } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <div className="bg-white w-64 h-screen flex flex-col items-start py-10 px-6 shadow-lg">
+    <div className="bg-white w-64 h-screen flex flex-col items-start py-10 px-6">
       {/* Logo Section */}
       <div className="mb-8">
         <img
@@ -19,27 +20,27 @@ const Sidebar = () => {
       </div>
 
       {/* Sidebar Menu */}
-      <ul className="text-lg space-y-1 w-full">
+      <ul className="text-lg space-y-4 w-full">
         {/* Stats Item */}
-        <li className="flex items-center gap-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 p-3 rounded-lg transition-colors cursor-pointer">
+        <Link to="stats" className="flex items-center gap-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 p-3 rounded-lg transition-colors cursor-pointer">
           <IoBarChart className="text-xl text-blue-500" />
           <span>Stats</span>
-        </li>
+        </Link >
         {/* All Jobs Item */}
-        <li className="flex items-center gap-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 p-3 rounded-lg transition-colors cursor-pointer">
+        <Link to="allJobs" className="flex items-center gap-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 p-3 rounded-lg transition-colors cursor-pointer">
           <MdQueryStats className="text-xl" />
           <span>All Jobs</span>
-        </li>
+        </Link >
         {/* Add Jobs Item */}
-        <li className="flex items-center gap-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 p-3 rounded-lg transition-colors cursor-pointer">
-          <MdOutlineCalendarMonth className="text-xl" />
+        <Link to='addJobs' className="flex items-center gap-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 p-3 rounded-lg transition-colors cursor-pointer">
+          <MdOutlineCalendarMonth className="text-2xl" />
           <span>Add Jobs</span>
-        </li>
+        </Link >
         {/* Profile Item */}
-        <li className="flex items-center gap-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 p-3 rounded-lg transition-colors cursor-pointer">
+        <Link to='profile' className="flex items-center gap-3 text-gray-600 hover:text-blue-600 hover:bg-gray-100 p-3 rounded-lg transition-colors cursor-pointer">
           <ImProfile className="text-xl" />
           <span>Profile</span>
-        </li>
+        </Link>
       </ul>
     </div>
   );
