@@ -5,10 +5,11 @@ import image from "../assets/image.svg"
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen mb-10">
+    <div className="min-h-40 mb-4">
       {/* Header Section */}
-      <div className="flex space-x-6 items-center px-6 py-4 mx-14">
-        <img src={logo} alt="" />
+      <div className="flex space-x-6 items-center px-6 py-2 mx-14">
+        <img src={logo} alt="" 
+        className="mt-2"/>
       </div>
 
       {/* Main Section */}
