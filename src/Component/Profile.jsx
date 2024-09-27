@@ -18,7 +18,7 @@ const Profile = () => {
             id="search"
             type="text"
             placeholder=""
-            className="border rounded px-2 py-1"
+            className="bg-gray-100 border rounded px-6 py-1"
           />
         </div>
 
@@ -30,7 +30,7 @@ const Profile = () => {
             id="search"
             type="text"
             placeholder=""
-            className="border rounded px-2 py-1"
+            className="bg-gray-100 border rounded px-6 py-1 text-gray-300"
           />
         </div>
 
@@ -42,7 +42,7 @@ const Profile = () => {
             id="search"
             type="text"
             placeholder=""
-            className="border rounded px-2 py-1"
+            className="bg-gray-100 border rounded px-6 py-1"
           />
         </div>
 
@@ -54,7 +54,7 @@ const Profile = () => {
             id="search"
             type="text"
             placeholder=""
-            className="border rounded px-2 py-1"
+            className="bg-gray-100 border rounded px-6 py-1"
           />
         </div>
         <button className="bg-blue-500 text-white w-48 h-8 mt-4 rounded flex items-center justify-center">

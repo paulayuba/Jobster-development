@@ -18,7 +18,7 @@ const AddJobs = () => {
               id="search"
               type="text"
               placeholder=""
-              className="border rounded px-2 py-1"
+              className="bg-gray-100 border rounded px-6 py-1"
             />
           </div>
 
@@ -30,7 +30,7 @@ const AddJobs = () => {
               id="search"
               type="text"
               placeholder=""
-              className="border rounded px-2 py-1"
+              className="bg-gray-100 border rounded px-6 py-1"
             />
           </div>
 
@@ -42,7 +42,7 @@ const AddJobs = () => {
               id="search"
               type="text"
               placeholder=""
-              className="border rounded px-2 py-1"
+              className="bg-gray-100 border rounded px-6 py-1"
             />
           </div>
 
@@ -54,7 +54,7 @@ const AddJobs = () => {
               id="search"
               type="text"
               placeholder=""
-              className="border rounded px-2 py-1"
+              className="bg-gray-100 border rounded px-6 py-1"
             />
           </div>
           <div className="mb-4">
@@ -65,7 +65,7 @@ const AddJobs = () => {
               id="search"
               type="text"
               placeholder=""
-              className="border rounded px-2 py-1"
+              className="bg-gray-100 border rounded px-6 py-1"
             />
           </div>
           <div className='flex space-x-4 '>
