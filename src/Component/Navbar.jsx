@@ -22,7 +22,7 @@ const Navbar = () => {
       </div>
       <div className=" px-6 py-6 relative space-y-3">
         <button onClick={handleClick} className="bg-blue-400 flex h-8 w-28 text-white rounded-md justify-center py-1 items-center gap-2">
-          <IoPersonCircleOutline />
+          <IoPersonCircleOutline  className=''/>
           test user
           <FaSortDown/>
         </button>
