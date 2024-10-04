@@ -1,117 +1,118 @@
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useState } from 'react';
 
+const AddJob = () => {
+  const [position, setPosition] = useState('');
+  const [company, setCompany] = useState('');
+  const [location, setLocation] = useState('');
+  const [status, setStatus] = useState('pending');
+  const [jobType, setJobType] = useState('full-time');
 
+  const handleClear = () => {
+    setPosition('');
+    setCompany('');
+    setLocation('');
+    setStatus('pending');
+    setJobType('full-time');
+  };
 
-const AddJobs = () => {
-  const [AddJobs,setAddJobs] = useState("")
-  const [Position,setPosition] = useState("")
-  const [ Company,setCompany] = useState("")
-  const [JobLocation,setJobLocation] = useState("")
-  const [Status,setStatus] = useState("")
-  const [JobType,setJobType] = useState("")
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic
+    console.log({ position, company, location, status, jobType });
+  };
+
   return (
-    <div className="px-10">
-      <Outlet />
-      <div className="bg-white rounded shadow-md w-full h-60 py-1 px-8">
-        <div className="py-4 px-6 font-normal text-2xl">
-          <p>Add Job</p>
+    <div className='px-10'>
+    <div className="max-w-5xl mx-auto p-6 bg-white px-8 shadow-md hover:drop-shadow-lg rounded-md mt-12">
+      <h2 className="text-xl font-semibold mb-4">Add Job</h2>
+      <form className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" onSubmit={handleSubmit}>
+        {/* Position Input */}
+        <div className="flex flex-col">
+          <label htmlFor="position" className="mb-1 font-medium">Position</label>
+          <input
+            type="text"
+            id="position"
+            value={position}
+            onChange={(e) => setPosition(e.target.value)}
+            className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
+          />
         </div>
-        <form className="flex flex-cols-2 space-x-4 py-1 flex-wrap items-center">
-          {/* Position */}
-          <div className="mb-4">
-            <label htmlFor="search1" className="block mb-2 text-gray-500">
-              Position
-            </label>
-            <input
-              id="search1"
-              type="text"
-              placeholder=""
-              className="bg-gray-100 border rounded px-6 py-1"
-            />
-          </div>
 
-          {/* Company */}
-          <div className="mb-4">
-            <label htmlFor="search2" className="block mb-2 text-gray-700">
-              Company
-            </label>
-            <input
-              id="search2"
-              type="text"
-              placeholder=""
-              className="bg-gray-100 border rounded px-6 py-1"
-            />
-          </div>
+        {/* Company Input */}
+        <div className="flex flex-col">
+          <label htmlFor="company" className="mb-1 font-medium">Company</label>
+          <input
+            type="text"
+            id="company"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+            className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
+          />
+        </div>
 
-          {/* Job Location */}
-          <div className="mb-4">
-            <label htmlFor="search3" className="block mb-2 text-gray-700">
-              Job Location
-            </label>
-            <input
-              id="search3"
-              type="text"
-              placeholder=""
-              className="bg-gray-100 border rounded px-6 py-1"
-            />
-          </div>
+        {/* Job Location Input */}
+        <div className="flex flex-col">
+          <label htmlFor="location" className="mb-1 font-medium">Job Location</label>
+          <input
+            type="text"
+            id="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
+          />
+        </div>
 
-          {/* Status */}
-          <div className="mb-4">
-            <label htmlFor="status" className="block mb-2 text-gray-700">
-              Status
-            </label>
-            <select
-              id="status"
-              className="bg-gray-100 border rounded px-6 py-1 w-56"
-              value={status}
-              onChange={(e) => setStatus(e.target.value)}
-            >
-              <option value="pending">Pending</option>
-              <option value="interview">Interview</option>
-              <option value="declined">Declined</option>
-            </select>
-          </div>
+        {/* Status Dropdown */}
+        <div className="flex flex-col">
+          <label htmlFor="status" className="mb-1 font-medium">Status</label>
+          <select
+            id="status"
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+            className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
+          >
+            <option value="pending">pending</option>
+            <option value="interview">interview</option>
+            <option value="declined">declined</option>
+          </select>
+        </div>
 
-          {/* Job Type */}
-          <div className="mb-4">
-  <label htmlFor="search4" className="block mb-2 text-gray-700">
-    Job Type
-  </label>
-  <select
-    id="jobType"
-    value={jobType}
-    onChange={(e) => setJobType(e.target.value)}
-    className="bg-gray-100 border rounded px-6 py-1 mb-2"
-  >
-    <option value="full-time">Full-Time</option>
-    <option value="part-time">Part-Time</option>
-    <option value="remote">Remote</option>
-    <option value="internship">Internship</option>
-  </select>
-  <input
-    id="search4"
-    type="text"
-    placeholder=""
-    className="bg-gray-100 border rounded px-6 py-1"
-  />
-</div>
+        {/* Job Type Dropdown */}
+        <div className="flex flex-col">
+          <label htmlFor="jobType" className="mb-1 font-medium">Job Type</label>
+          <select
+            id="jobType"
+            value={jobType}
+            onChange={(e) => setJobType(e.target.value)}
+            className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
+          >
+            <option value="full-time">full-time</option>
+            <option value="part-time">part-time</option>
+            <option value="remote">remote</option>
+            <option value="internship">internship</option>
+          </select>
+        </div>
 
-
-          {/* Buttons */}
-          <div className="flex space-x-4">
-            <button className="bg-gray-500 text-white w-24 h-8 mt-4 rounded flex items-center justify-center">
-              Clear
-            </button>
-            <button className="bg-blue-500 text-white w-24 h-8 mt-4 rounded flex items-center justify-center">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
+        {/* Buttons */}
+        <div className="flex items-end space-x-2">
+          <button
+            type="button"
+            onClick={handleClear}
+            className="px-6 py-2 w-1/2 bg-gray-500 hover:bg-gray-800 text-white rounded-md"
+          >
+            Clear
+          </button>
+          <button
+            type="submit"
+            className="px-6 py-2 bg-blue-500 hover:bg-blue-800 w-1/2 text-white rounded-md"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
     </div>
   );
 };
 
-export default AddJobs;
+export default AddJob;

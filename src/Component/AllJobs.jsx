@@ -6,84 +6,95 @@ const AllJobs = () => {
   const [status, setStatus] = useState("");
   const [type, setType] = useState("");
   const [sort, setSort] = useState("");
+  const [position, setPosition] = useState(""); // Added state for position
+  const [company, setCompany] = useState(""); // Added state for company
+  const [location, setLocation] = useState(""); // Added state for location
+  const [jobType, setJobType] = useState(""); // Added state for job type
 
   const handleClear = () => {
     setSearch("");
     setStatus("");
     setType("");
     setSort("");
+    setPosition(""); // Clear position
+    setCompany(""); // Clear company
+    setLocation(""); // Clear location
+    setJobType(""); // Clear job type
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your form submission logic here
+    console.log("Form submitted with:", {
+      search,
+      status,
+      type,
+      sort,
+      position,
+      company,
+      location,
+      jobType,
+    });
   };
 
   return (
     <div className="px-10">
       <Outlet />
-      <div className="bg-white rounded shadow-md w-full h-60 py-1 px-8">
+      <div className="bg-white rounded shadow-md w-full py-1 px-8">
         <div className="py-4 px-2">
           <p className="text-2xl font-normal">Search Form</p>
         </div>
-        <form className="flex flex-cols-2 space-x-4 py-1 flex-wrap items-center">
-          {/* Search Field */}
-          <div className="mb-4">
-            <label className="block mb-2 text-gray-500">Search</label>
+        <form className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" onSubmit={handleSubmit}>
+          {/* Position Input */}
+          <div className="flex flex-col">
+            <label htmlFor="position" className="mb-1 font-medium">Position</label>
             <input
-              id="search"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
               type="text"
-              placeholder=""
-              className="bg-gray-100 border rounded px-6 py-1"
+              id="position"
+              value={position}
+              onChange={(e) => setPosition(e.target.value)}
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
+            />
+          </div>
+
+          {/* Company Input */}
+          <div className="flex flex-col">
+            <label htmlFor="company" className="mb-1 font-medium">Company</label>
+            <input
+              type="text"
+              id="company"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
+            />
+          </div>
+
+          {/* Job Location Input */}
+          <div className="flex flex-col">
+            <label htmlFor="location" className="mb-1 font-medium">Job Location</label>
+            <input
+              type="text"
+              id="location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
             />
           </div>
 
           {/* Status Dropdown */}
-          <div className="mb-4">
-            <label className="block mb-2 text-gray-700">Status</label>
+          <div className="flex flex-col">
+            <label htmlFor="status" className="mb-1 font-medium">Status</label>
             <select
               id="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="bg-gray-100 border rounded px-6 py-1 w-56"
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8]"
             >
-              <option value="All">All</option>
-              <option value="interview">Interview</option>
-              <option value="declined">Declined</option>
-              <option value="pending">Pending</option>
+              <option value="pending">pending</option>
+              <option value="interview">interview</option>
+              <option value="declined">declined</option>
             </select>
           </div>
-
-          {/* Type Dropdown */}
-          <div className="mb-4">
-            <label className="block mb-2 text-gray-700">Type</label>
-            <select
-              id="type"
-              value={type}
-              onChange={(e) => setType(e.target.value)}
-              className="bg-gray-100 border rounded px-6 py-1 w-56"
-            >
-              <option value="All">All</option>
-              <option value="full-time">Full-Time</option>
-              <option value="part-time">Part-Time</option>
-              <option value="remote">Remote</option>
-              <option value="internship">Internship</option>
-            </select>
-          </div>
-
-          {/* Sort Dropdown */}
-          <div className="mb-4">
-            <label className="block mb-2 text-gray-700">Sort</label>
-            <select
-              id="sort"
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-              className="bg-gray-100 border rounded px-6 py-1 w-56"
-            >
-              <option value="latest">Latest</option>
-              <option value="oldest">Oldest</option>
-              <option value="a-z">A-Z</option>
-              <option value="z-a">Z-A</option>
-            </select>
-          </div>
-
           {/* Clear Button */}
           <button
             type="button"
