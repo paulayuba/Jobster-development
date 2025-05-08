@@ -37,7 +37,7 @@ const AddJob = () => {
               type="text"
               value={position}
               onChange={(e) => setPosition(e.target.value)}
-              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-blue-500"
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -49,7 +49,7 @@ const AddJob = () => {
               type="text"
               value={company}
               onChange={(e) => setCompany(e.target.value)}
-              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-blue-500"
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -61,7 +61,7 @@ const AddJob = () => {
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-blue-500"
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -72,7 +72,7 @@ const AddJob = () => {
               id="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-blue-500"
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="pending">Pending</option>
               <option value="interview">Interview</option>
@@ -87,7 +87,7 @@ const AddJob = () => {
               id="jobType"
               value={jobType}
               onChange={(e) => setJobType(e.target.value)}
-              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-blue-500"
+              className="p-2 border border-gray-300 rounded bg-[#F0F4F8] focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="full-time">Full-Time</option>
               <option value="part-time">Part-Time</option>
@@ -97,17 +97,17 @@ const AddJob = () => {
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col justify-end gap-3 sm:flex-row sm:items-end sm:col-span-full">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-3 flex gap-4 justify-start items-end mt-2">
             <button
               type="button"
               onClick={handleClear}
-              className="w-full sm:w-auto px-6 py-2 bg-gray-600 hover:bg-gray-800 text-white rounded-md transition"
+              className="px-6 py-2 bg-gray-600 hover:bg-gray-800 text-white rounded-md transition"
             >
               Clear
             </button>
             <button
               type="submit"
-              className="w-full sm:w-auto px-6 py-2 bg-blue-600 hover:bg-blue-800 text-white rounded-md transition"
+              className="px-6 py-2 bg-blue-600 hover:bg-blue-800 text-white rounded-md transition"
             >
               Submit
             </button>
